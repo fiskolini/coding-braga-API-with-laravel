@@ -58,13 +58,9 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        try {
-            return response()->json(
-                \Auth::user()->events()->findOrFail($id)
-            );
-        } catch (\Throwable $exception) {
-            return \Route::respondWithRoute('api.404');
-        }
+        return response()->json(
+            \Auth::user()->events()->find($id)
+        );
     }
 
     /**
