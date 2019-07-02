@@ -14,7 +14,7 @@ class UsersAndEventsSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Model\User::class)
+        factory(\App\User::class)
             ->create()
             ->events()
             ->save(
